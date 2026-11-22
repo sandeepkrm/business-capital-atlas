@@ -1,5 +1,5 @@
 import { Link, useLoaderData } from "@tanstack/react-router";
-import logo from "@/assets/logo.png.asset.json";
+import logo from "@/assets/logo.png";
 import type { NavItem, SeoOverride, SiteSettings } from "@/lib/cms.functions";
 import { ChevronDown, Facebook, Instagram, Linkedin, Menu, Twitter, X, Youtube } from "lucide-react";
 
@@ -73,7 +73,7 @@ function MenuLink({ i, onClick, className }: { i: Item; onClick?: () => void; cl
 }
 
 export function Logo({ className = "h-10" }: { className?: string }) {
-  return <img src={logo.url} alt="FundingCompany — Your vision, our finance" width={300} height={104} className={`${className} w-auto`} />;
+  return <img src={logo} alt="FundingCompany — Your vision, our finance" width={300} height={104} className={`${className} w-auto`} />;
 }
 
 export function Header() {
