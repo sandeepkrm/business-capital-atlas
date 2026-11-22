@@ -1,0 +1,21 @@
+# Roadmap
+- [x] Replace loan-page illustrative figures with sourced directory figures (missing products explicitly require lender confirmation)
+- [x] Add verified UK bank directory entries without implying partnerships
+- [x] Add admin-controlled knowledge and website handover flow — admin save/read verification waits for an admin account
+- [ ] Live WhatsApp Inbox replies — blocked: WhatsApp connection declined
+- [x] Risk notices on loan pages + calculators
+- [x] Logo + favicon
+- [x] Secure enquiry + partner forms (stored in Cloud)
+- [x] AI Funding Advisor (/funding-advisor)
+- [x] CMS admin (/admin): enquiries, partners, pages, blog, menu, SEO, media
+- [x] Blog + dynamic CMS pages + sitemap
+- [ ] Owner email notifications — blocked: needs a verified sender domain + owner email address
+- [ ] Grant admin role — blocked: owner must create account at /admin (none exists yet)
+- [x] Lender directory (admin + /lenders + loan pages)
+- [x] Home page redesign with icons
+- [ ] Legal + About real details — blocked: need company name, address, company number, FCA details, history
+- [x] 3 UK blog posts with images + SEO titles
+- [x] Company/legal details + social links editable in admin (footer, Legal); Legal/About overridable via CMS pages
+- [x] FundingMate AI chatbot + Knowledge Hub + live Funding Inbox; enquiries live in admin
+- [ ] Confirm which listed banks are actual FundingCompany partners — blocked: needs owner's confirmation
+- [ ] Activate WhatsApp Connect messaging — blocked: Business connection declined; live receiver, sending and callback verification remain unimplemented

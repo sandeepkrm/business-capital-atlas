@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1793008612578,
+      "tag": "0000_cms_leads_roles",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793009078416,
+      "tag": "0001_remove_first_admin_trigger",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793009102955,
+      "tag": "0002_split_cms_read_policy",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1793009559404,
+      "tag": "0003_create_lenders",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1793010455219,
+      "tag": "0004_settings_chat_realtime",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1793020716431,
+      "tag": "0005_directory_sources_and_chat_flow",
+      "breakpoints": true
+    }
+  ]
+}
