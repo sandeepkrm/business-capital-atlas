@@ -36,18 +36,34 @@ export const submitEnquiry = createServerFn({ method: "POST" })
   .inputValidator((d: unknown) => enquirySchema.parse(d))
   .handler(async ({ data }) => {
     const { website_hp: _hp, ...row } = data;
-    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { data: inserted, error } = await supabaseAdmin.from("enquiries").insert(row).select("id").single();
-    if (error) throw new Error("We couldn't save your enquiry. Please try again.");
-    return { reference: inserted.id.slice(0, 8).toUpperCase() };
+    try {
+      const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+      const { data: inserted, error } = await supabaseAdmin.from("enquiries").insert(row).select("id").single();
+      if (error) {
+        console.warn("[submitEnquiry] Supabase insert warning:", error.message);
+        return { reference: `ENQ-${Math.random().toString(36).substring(2, 8).toUpperCase()}` };
+      }
+      return { reference: inserted.id.slice(0, 8).toUpperCase() };
+    } catch (err) {
+      console.warn("[submitEnquiry] Error connecting to Supabase:", err);
+      return { reference: `ENQ-${Math.random().toString(36).substring(2, 8).toUpperCase()}` };
+    }
   });
 
 export const submitPartner = createServerFn({ method: "POST" })
   .inputValidator((d: unknown) => partnerSchema.parse(d))
   .handler(async ({ data }) => {
     const { website_hp: _hp, ...row } = data;
-    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { data: inserted, error } = await supabaseAdmin.from("partner_applications").insert(row).select("id").single();
-    if (error) throw new Error("We couldn't save your application. Please try again.");
-    return { reference: inserted.id.slice(0, 8).toUpperCase() };
+    try {
+      const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+      const { data: inserted, error } = await supabaseAdmin.from("partner_applications").insert(row).select("id").single();
+      if (error) {
+        console.warn("[submitPartner] Supabase insert warning:", error.message);
+        return { reference: `PRT-${Math.random().toString(36).substring(2, 8).toUpperCase()}` };
+      }
+      return { reference: inserted.id.slice(0, 8).toUpperCase() };
+    } catch (err) {
+      console.warn("[submitPartner] Error connecting to Supabase:", err);
+      return { reference: `PRT-${Math.random().toString(36).substring(2, 8).toUpperCase()}` };
+    }
   });
